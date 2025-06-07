@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Plane Simulator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #000;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+        }
+
+        #game-container {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+        }
+
+        #ui-overlay {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            color: white;
+            z-index: 100;
+            font-size: 18px;
+        }
+
+        #controls-ui {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            color: white;
+            z-index: 100;
+            font-size: 14px;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 15px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+        }
+
+        #speed-indicator {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            color: white;
+            z-index: 100;
+            font-size: 24px;
+            font-weight: bold;
+            background: rgba(0, 0, 0, 0.7);
+            padding: 10px 20px;
+            border-radius: 8px;
+            border: 2px solid #00ff00;
+        }
+
+        .speed-slow { border-color: #ff4444 !important; color: #ff4444 !important; }
+        .speed-medium { border-color: #ffaa00 !important; color: #ffaa00 !important; }
+        .speed-fast { border-color: #00ff00 !important; color: #00ff00 !important; }
+
+        #loading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            font-size: 24px;
+            z-index: 200;
+        }
+    </style>
+</head>
+<body>
+    <div id="game-container">
+        <div id="loading">Loading 3D Scene...</div>
+        <div id="ui-overlay">
+            <div>Milestone 4: UFO Combat!</div>
+            <div>Destroy the invading UFOs</div>
+        </div>
+        <div id="speed-indicator">
+            <div>SPEED: <span id="speed-value">30</span></div>
+        </div>
+        <div id="score-ui" style="position: absolute; top: 20px; right: 150px; color: white; font-size: 16px; background: rgba(0,0,0,0.7); padding: 10px; border-radius: 5px;">
+            <div>SCORE: <span id="score-value">0</span></div>
+            <div>HITS: <span id="hits-value">0</span></div>
+            <div>ACCURACY: <span id="accuracy-value">0</span>%</div>
+        </div>
+        <div id="controls-ui">
+            <div><strong>FLIGHT CONTROLS</strong></div>
+            <div>W/S: Pitch Up/Down</div>
+            <div>A/D: Roll Left/Right</div>
+            <div>Q/E: Speed Down/Up</div>
+            <div>SPACE: Fire Weapons</div>
+            <div>C: Toggle Camera</div>
+            <div style="margin-top: 10px;"><strong>AUDIO</strong></div>
+            <div>M: Toggle Music</div>
+            <div>N: Toggle Sound FX</div>
+        </div>
+    </div>
+    <script type="module" src="src/main.js"></script>
+</body>
+</html> 
